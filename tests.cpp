@@ -23,7 +23,6 @@ void runAllTests() {
 
     printf("TEST SQUARE\n");
 
-    // n_success
     GetFileValues(txt_inp_sq, inp_sq);
     size_t n_success = 0;
     for (size_t i = 0; i < n; ++i) {

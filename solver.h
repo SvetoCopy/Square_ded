@@ -1,5 +1,3 @@
-// ConsoleApplication1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
@@ -35,7 +33,6 @@ struct Equation {
 int isEqual(double a, double b);
 int is_Equal_Roots(Roots x, Roots y);
 int solve_linear(Coeffs data, Roots *root);
-
 int solve_square(Coeffs data, Roots *roots);
 
 

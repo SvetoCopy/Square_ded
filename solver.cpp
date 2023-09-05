@@ -1,5 +1,4 @@
-﻿
-#include "solver.h"
+﻿#include "solver.h"
 
 int isEqual(double a, double b) {
 	return fabs(a - b) < EPSILON;
@@ -17,9 +16,7 @@ int solve_linear(Coeffs data, Roots* root) {
 	return ONE_ROOT;
 }
 
-// root_1
 int is_Equal_Roots(Roots root_1, Roots root_2) {
-    // if (!isnan(x1) && x1 == root_1)
     if (((root_1.count == 1) || (root_2.count == 1)) && (root_1.x1 == root_2.x1) )
         return 1;
     if ((root_1.x1 == root_2.x1 && root_1.x2 == root_2.x2) || (root_1.x2 == root_2.x1 && root_1.x1 == root_2.x2))

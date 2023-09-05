@@ -2,7 +2,7 @@
 
 Coeffs get_values() {
     Coeffs inp{0, 0, 0};
-
+    printf("Write coefficient of equation in format: 8 9 2\n")
     while (scanf("%lg %lg %lg", &inp.a, &inp.b, &inp.c) < 3) {
         printf("Incorrect input!\n");
         while (getchar() != '\n') {}
@@ -28,16 +28,16 @@ void print_roots(int roots_count, Roots roots) {
 
     switch (roots_count) {
         case INF_ROOTS:
-            printf("INF");
+            printf("This equation has infinite number of roots");
             break;
         case NO_ROOTS:
-            printf("NO ROOTS");
+            printf("This equation hasn't roots");
             break;
         case ONE_ROOT:
-            printf("x = %f\n", roots.x1);
+            printf("This equation has 1 root\nx = %f\n", roots.x1);
             break;
         case TWO_ROOTS:
-            printf("x1 = %f \nx2 = %f", roots.x1, roots.x2);
+            printf("This equation has 2 root\nx1 = %f \nx2 = %f", roots.x1, roots.x2);
             break;
     }
 
