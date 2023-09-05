@@ -4,19 +4,14 @@
 
 #ifndef DED_TESTS_H
 #define DED_TESTS_H
-#include "kvadratka.h"
+#include "io.h"
 
-struct TestValue {
-    Coeffs TEST_INP{0, 0, 0};
-    Roots TEST_RES{0, 0, 0};
-};
+// TestData
 
-int TEST_Square(TestValue data, int num);
 
-int TEST_Linear(TestValue data, int num);
+// TestSquare()
+int TestSquare(Equation data, size_t num);
 
-void GetFileValues(const char *filename_inp, const char *filename_res, size_t n, TestValue inp[]);
-
-void Test();
+void runAllTests();
 
 #endif //DED_TESTS_H

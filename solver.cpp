@@ -1,5 +1,5 @@
 ﻿
-#include "kvadratka.h"
+#include "solver.h"
 
 int isEqual(double a, double b) {
 	return fabs(a - b) < EPSILON;
@@ -17,14 +17,17 @@ int solve_linear(Coeffs data, Roots* root) {
 	return ONE_ROOT;
 }
 
-int is_Equal_Roots(Roots x, Roots y) {
-    if (((x.count == 1)||(y.count == 1))&&(x.x1 == y.x1))
+// root_1
+int is_Equal_Roots(Roots root_1, Roots root_2) {
+    // if (!isnan(x1) && x1 == root_1)
+    if (((root_1.count == 1) || (root_2.count == 1)) && (root_1.x1 == root_2.x1) )
         return 1;
-    if ((x.x1 == y.x1 && x.x2 == y.x2) || (x.x2 == y.x1 && x.x1 == y.x2))
+    if ((root_1.x1 == root_2.x1 && root_1.x2 == root_2.x2) || (root_1.x2 == root_2.x1 && root_1.x1 == root_2.x2))
         return 1;
     return 0;
 }
 
+// coeffs
 int solve_square(Coeffs data, Roots* roots) {
 	assert(roots != NULL);
 
@@ -37,8 +40,8 @@ int solve_square(Coeffs data, Roots* roots) {
 	if (D < 0) {
 		return NO_ROOTS;
 	}
-	if (isEqual(D, 0.0)) {
-		roots->x1 = -data.b / (2*data.a);
+	if (isEqual(D, 0)) {
+		roots->x1 = -data.b / (2 * data.a);
 		roots->x2 = roots->x1;
 		return ONE_ROOT;
 	}
@@ -48,21 +51,3 @@ int solve_square(Coeffs data, Roots* roots) {
 	return TWO_ROOTS;
 }
 
-void print_roots(int roots_count, Roots roots) {
-
-	switch (roots_count) {
-	case INF_ROOTS:
-		printf("INF");
-		break;
-	case NO_ROOTS:
-		printf("NO ROOTS");
-		break;
-	case ONE_ROOT:
-		printf("x = %f\n", roots.x1);
-		break;
-	case TWO_ROOTS:
-		printf("root.x1 = %f \nx2 = %f", roots.x1, roots.x2);
-		break;
-	}
-
-}
