@@ -5,13 +5,13 @@
 int main(int argc, const char* argv[]) {
     //runAllTests();
     if (argc <= 1) {
-        Coeffs coeffs = get_values();
+        Coeffs coeffs = GetCoeffs();
         Roots res = { 0, 0, 0 };
-        solve_square(coeffs, &res);
-        print_roots(res);
+        SolveSquare(coeffs, &res);
+        PrintRoots(res);
         return 0;
     }
     if (!strcmp(argv[1], "--test")) {
-        runAllTests();
+        RunAllTests();
     }
 }

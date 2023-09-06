@@ -4,7 +4,7 @@ int isEqual(double a, double b) {
 	return fabs(a - b) < EPSILON;
 }
 
-int solve_linear(Coeffs data, Roots* root) {
+int SolveLinear(Coeffs data, Roots* root) {
 	assert(root != NULL);
 
 	if (isEqual(data.b, 0)) {
@@ -22,7 +22,7 @@ int solve_linear(Coeffs data, Roots* root) {
 	return ONE_ROOT;
 }
 
-int is_Equal_Roots(Roots root_1, Roots root_2) {
+int isEqualRoots(Roots root_1, Roots root_2) {
 	if (((root_1.count == 1) || (root_2.count == 1)) && (root_1.x1 == root_2.x1))
 		return 1;
 	if ((root_1.x1 == root_2.x1 && root_1.x2 == root_2.x2) || (root_1.x2 == root_2.x1 && root_1.x1 == root_2.x2))
@@ -31,11 +31,11 @@ int is_Equal_Roots(Roots root_1, Roots root_2) {
 }
 
 // coeffs
-int solve_square(Coeffs data, Roots* roots) {
+int SolveSquare(Coeffs data, Roots* roots) {
 	assert(roots != NULL);
 
 	if (isEqual(data.a, 0)) {
-		return solve_linear(data, roots);
+		return SolveLinear(data, roots);
 	}
 
 	double D = data.b * data.b - 4 * data.a * data.c;

@@ -3,7 +3,7 @@
 #include "tests.h"
 
 
-void GetFileValues(const char* filename_inp, TestData inp[]);
-Coeffs get_values();
-void print_roots(Roots roots);
+void GetTestData(const char* filename_inp, TestData inp[]);
+Coeffs GetCoeffs();
+void PrintRoots(Roots roots);
 #endif

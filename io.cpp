@@ -10,7 +10,7 @@ Coeffs GetCoeffs() {
     return inp;
 }
 
-void GetFileValues(const char* filename_inp, TestData inp[]) {
+void GetTestData(const char* filename_inp, TestData inp[]) {
     FILE* f_inp = NULL;
     fopen_s(&f_inp, filename_inp, "r");
 
@@ -24,7 +24,7 @@ void GetFileValues(const char* filename_inp, TestData inp[]) {
 
 }
 
-void print_roots(Roots roots) {
+void PrintRoots(Roots roots) {
 
     switch (roots.count) {
     case INF_ROOTS:

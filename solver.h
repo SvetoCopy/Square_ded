@@ -22,18 +22,16 @@ struct Coeffs {
 };
 
 struct Roots {
-    Roots(double x, double y, size_t c) :
-        x1{ x }, x2{ y }, count{ c } {};
-    double x1 = 0;
-    double x2 = 0;
-    size_t count = 0;
+    double x1;
+    double x2;
+    size_t count;
 };
 
 
 int isEqual(double a, double b);
-int is_Equal_Roots(Roots x, Roots y);
-int solve_linear(Coeffs data, Roots* root);
-int solve_square(Coeffs data, Roots* roots);
+int isEqualRoots(Roots x, Roots y);
+int SolveLinear(Coeffs data, Roots* root);
+int SolveSquare(Coeffs data, Roots* roots);
 
 
 

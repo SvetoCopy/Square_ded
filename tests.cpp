@@ -2,11 +2,11 @@
 #include "io.h"
 int TestSquare(TestData data, size_t num) {
     Roots x{ 0, 0, 0 };
-    if (data.roots.count != solve_square(data.coeffs, &x)) {
+    if (data.roots.count != SolveSquare(data.coeffs, &x)) {
         printf("TEST #%zu - FAILED (Different count of roots)\n", num);
         return 0;
     }
-    if (is_Equal_Roots(x, data.roots)) {
+    if (isEqualRoots(x, data.roots)) {
         printf("TEST #%zu - PASSED\n", num);
         return 1;
     }
@@ -16,14 +16,14 @@ int TestSquare(TestData data, size_t num) {
 
 
 
-void runAllTests() {
+void RunAllTests() {
     const int n = 10;
     TestData inp_sq[n] = {};
     const char* txt_inp_sq = "inp_square.txt";
 
     printf("TEST SQUARE\n");
 
-    GetFileValues(txt_inp_sq, inp_sq);
+    GetTestData(txt_inp_sq, inp_sq);
     size_t n_success = 0;
     for (size_t i = 0; i < n; ++i) {
         n_success += TestSquare(inp_sq[i], i);

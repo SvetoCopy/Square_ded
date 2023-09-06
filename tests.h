@@ -8,6 +8,6 @@ struct TestData{
 };
 int TestSquare(TestData data, size_t num);
 
-void runAllTests();
+void RunAllTests();
 
 #endif //DED_TESTS_H
