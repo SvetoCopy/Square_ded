@@ -1,7 +1,11 @@
+#ifndef DED_SOLVER
+#define DED_SOLVER
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
 #include <assert.h>
+
+
 
 enum NUM_OF_ROOTS {
     NO_ROOTS = 0,
@@ -19,21 +23,18 @@ struct Coeffs {
 
 struct Roots {
     Roots(double x, double y, size_t c) :
-            x1{x}, x2{y}, count{c} {};
+        x1{ x }, x2{ y }, count{ c } {};
     double x1 = 0;
     double x2 = 0;
     size_t count = 0;
 };
 
-struct Equation {
-    Coeffs coeffs{0, 0, 0};
-    Roots roots{0, 0, 0};
-};
 
 int isEqual(double a, double b);
 int is_Equal_Roots(Roots x, Roots y);
-int solve_linear(Coeffs data, Roots *root);
-int solve_square(Coeffs data, Roots *roots);
+int solve_linear(Coeffs data, Roots* root);
+int solve_square(Coeffs data, Roots* roots);
 
 
 
+#endif // !DED_SOLVER

@@ -1,8 +1,12 @@
 #ifndef DED_TESTS_H
 #define DED_TESTS_H
-#include "io.h"
+#include "solver.h"
 
-int TestSquare(Equation data, size_t num);
+struct TestData{
+    Coeffs coeffs{ 0, 0, 0 };
+    Roots roots{ 0, 0, 0 };
+};
+int TestSquare(TestData data, size_t num);
 
 void runAllTests();
 

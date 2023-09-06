@@ -1,7 +1,7 @@
 #include "tests.h"
-
-int TestSquare(Equation data, size_t num) {
-    Roots x{0, 0, 0};
+#include "io.h"
+int TestSquare(TestData data, size_t num) {
+    Roots x{ 0, 0, 0 };
     if (data.roots.count != solve_square(data.coeffs, &x)) {
         printf("TEST #%zu - FAILED (Different count of roots)\n", num);
         return 0;
@@ -18,7 +18,7 @@ int TestSquare(Equation data, size_t num) {
 
 void runAllTests() {
     const int n = 10;
-    Equation inp_sq[n] = {};
+    TestData inp_sq[n] = {};
     const char* txt_inp_sq = "inp_square.txt";
 
     printf("TEST SQUARE\n");

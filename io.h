@@ -1,8 +1,9 @@
-#include "solver.h"
 #ifndef DED_IO_H
 #define DED_IO_H
+#include "tests.h"
 
-void GetFileValues(const char *filename_inp, Equation inp[]);
+
+void GetFileValues(const char* filename_inp, TestData inp[]);
 Coeffs get_values();
-void print_roots(int roots_count, Roots roots);
+void print_roots(Roots roots);
 #endif
